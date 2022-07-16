@@ -1,0 +1,18 @@
+/* remove footer */
+.md-footer__inner {
+  display: none !important;
+}
+/* remove link mark before h1,h2,h3 */
+.headerlink {
+  display: none;
+}
+
+/* TODO */
+/* h1 {
+  display: none;
+} */
+
+h2, h3 {
+  color: #2094f3;
+  font-weight: 800 !important;
+}

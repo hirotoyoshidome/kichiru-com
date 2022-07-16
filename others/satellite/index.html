@@ -1,0 +1,2325 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技術系ブログです。">
+      
+      
+        <meta name="author" content="hirotoyoshidome">
+      
+      
+        <link rel="canonical" href="https://kichiru.com/others/satellite/">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>人工衛星データ - Kichiru's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-0G7J0KZQSW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-0G7J0KZQSW",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G7J0KZQSW"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Kichiru&#39;s Blog" class="md-header__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../images/yoshi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kichiru's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              人工衛星データ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Kichiru&#39;s Blog" class="md-nav__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../images/yoshi.png" alt="logo">
+
+    </a>
+    Kichiru's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        トップ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          がんばらないブログ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="がんばらないブログ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          がんばらないブログ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2022/my_opinion_startup/" class="md-nav__link">
+        スタートアップに転職して2年半たったのでちょっと書く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2022/how_to_use_web_push/" class="md-nav__link">
+        Webプッシュの使ってみる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2022/how_to_analyze_data/" class="md-nav__link">
+        僕がデータを見る時にやってること
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          2019
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2019" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2019
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/zombie_process_python/" class="md-nav__link">
+        ゾンビDocker&Pythonで作ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/memo_tls/" class="md-nav__link">
+        TLSの基礎知識
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/entry_docker/" class="md-nav__link">
+        Docker 入門してみた備忘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/about_blockchain/" class="md-nav__link">
+        ブロックチェーンとは？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/infra_command/" class="md-nav__link">
+        インフラエンジニアやっていてよく使うコマンド集!!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/look_back_infra/" class="md-nav__link">
+        インフラやり始めて半年経ったため振り返る
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/cache_hit_rate/" class="md-nav__link">
+        cacheのヒット率を測定するツールを作成しました
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/entry_django/" class="md-nav__link">
+        Djangoのチュートリアルやったためまとめとく
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/think_about_web_development/" class="md-nav__link">
+        転職することになった今だから思うことの話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/ci_cd_aws/" class="md-nav__link">
+        AWSでCI・CD環境を構築
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/entry_front_css/" class="md-nav__link">
+        フロントもさわるようになって絶望的にCSSができなかったため勉強した話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/ubuntu_from_windows10/" class="md-nav__link">
+        Windows10環境捨ててUbuntuにした結果...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/aws_basic_design/" class="md-nav__link">
+        AWSを使用した基本設計について考えてみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/github_circleci_heroku_cd/" class="md-nav__link">
+        GitHub+CircleCI+Herokuでプッシュしたらデプロイの仕組みをつくる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2019/about_blockchain_detail/" class="md-nav__link">
+        ブロックチェーンについて何もわからない人へ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          2018
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2018" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2018
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/ssl_grade/" class="md-nav__link">
+        WebサイトのSSL化(HTTPS)の3つのグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/stop_double_send/" class="md-nav__link">
+        二重送信防止についての備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/handling_file_upload/" class="md-nav__link">
+        ファイルアップロード時の処理について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/memo_tcp_ip/" class="md-nav__link">
+        TCP/IPの備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/crlf_lf/" class="md-nav__link">
+        改行コードについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/spring_context_error/" class="md-nav__link">
+        SpringFrameworkのコンテキストエラーについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/sprint_first_content/" class="md-nav__link">
+        SpringFrameworkの初期表示について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/java8_stream_api/" class="md-nav__link">
+        Java8 Stream API 使ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/spring_jsp_tag/" class="md-nav__link">
+        SpringFrameWorkでのJSP拡張タグの注意点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/review_pull_request/" class="md-nav__link">
+        プルリクの粒度とレビューに関する完全に独断と偏見のまとめ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/install_ruby_rails_windows/" class="md-nav__link">
+        WindowsでRuby, Railsをインストールする際に躓いた箇所
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/ruby_anemone/" class="md-nav__link">
+        Rubyでanemoneを使用してURLを取得するだけ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/entry_laravel/" class="md-nav__link">
+        Laravel導入 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/entry_shell/" class="md-nav__link">
+        基本的なシェルスクリプト 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/version_up_mysql5/" class="md-nav__link">
+        MySQL5.6→5.7バージョンアップ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/entry_docker_windows/" class="md-nav__link">
+        Docker for Windows を入門してみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/apache_ruby/" class="md-nav__link">
+        ApacheでRubyを起動するときの設定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/rails_server_sqlite3/" class="md-nav__link">
+        rails server でsqlite3のエラーが出た話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/beginner_mysql_command/" class="md-nav__link">
+        MySQL コマンドチートシート 初心者向け
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/rails_minitest_mock/" class="md-nav__link">
+        Rails MiniTestでモックを使用する方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/about_motivation/" class="md-nav__link">
+        モチベのおはなし
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/summary_agile/" class="md-nav__link">
+        アジャイル開発の知識まとめる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/about_rundeck/" class="md-nav__link">
+        必殺ジョブスケジューラ!!Rundeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/2018/vagrant_ssh_teraterm/" class="md-nav__link">
+        VirtualBox, Vagrantを使用してUbuntuを仮想マシンとして導入しTeraTermでSSH接続する
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/about_dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/about_cdn/" class="md-nav__link">
+        CDN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/about_cookie/" class="md-nav__link">
+        Cookie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/about_session/" class="md-nav__link">
+        Session
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/data_structure/" class="md-nav__link">
+        データ構造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/about_db/" class="md-nav__link">
+        DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/oauth/" class="md-nav__link">
+        OAuth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/algorithm/" class="md-nav__link">
+        アルゴリズム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/nosql/" class="md-nav__link">
+        NoSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/database/" class="md-nav__link">
+        データベース
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/elasticsearch-opensearch/" class="md-nav__link">
+        ElasticsearchとOpenSearch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          インフラ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="インフラ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          インフラ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/about_aws/" class="md-nav__link">
+        AWSについて
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          機械学習
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="機械学習" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          機械学習
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/about_ml/" class="md-nav__link">
+        機械学習
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/recommendation/" class="md-nav__link">
+        レコメンデーション
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/differential_equations/" class="md-nav__link">
+        微分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/integral/" class="md-nav__link">
+        積分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/trigonometric_functions/" class="md-nav__link">
+        三角関数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/linear_algebra/" class="md-nav__link">
+        線形代数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/probability_statistics/" class="md-nav__link">
+        確率・統計
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          ネットワーク
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ネットワーク" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          ネットワーク
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/about_osi/" class="md-nav__link">
+        OSI参照モデル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/tcp_ip/" class="md-nav__link">
+        TCP/IP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/proxy/" class="md-nav__link">
+        プロキシ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/protocol/" class="md-nav__link">
+        プロトコル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          セキュリティ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="セキュリティ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          セキュリティ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/phishing/" class="md-nav__link">
+        フィッシング詐欺
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/multi_factor_authentication/" class="md-nav__link">
+        多要素認証
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/free_wifi/" class="md-nav__link">
+        Free Wi-fi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/secure_guide/" class="md-nav__link">
+        サービスを安全に利用するために
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/log/" class="md-nav__link">
+        ログ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          アーキテクチャ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="アーキテクチャ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          アーキテクチャ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/bit/" class="md-nav__link">
+        データの単位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/character_code/" class="md-nav__link">
+        文字コード
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          その他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="その他" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          その他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        人工衛星データ
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">人工衛星データ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>衛星画像解析ソフトが必要な理由<ul>
+<li>衛星画像には位置情報がついているため（フォーマットはGeoTIFF形式）</li>
+<li>衛星画像にはバンドがある(NDVI(植物の活性度を検出), NDWI（水を検出）, False Color(植物を検出)など)<ul>
+<li>これらのバンドを組み合わせることで様々な解析ができる</li>
+<li>通常の赤青緑の画像はTrue Colorと呼ばれる</li>
+</ul>
+</li>
+<li>衛星画像には処理レベルがある（L0(衛星からの信号を画像に変換), L1(L0から画像の歪みやムラを除去)など）<ul>
+<li>一般に出回るのはL0, L1処理後の画像</li>
+<li>高次処理については自分で行う必要がある(これをやらないと解析も難しく利用しにくい)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>世界的にユーザー数が多いフリーソフトはQGIS<ul>
+<li>https://www.qgis.org/ja/site/forusers/download.html</li>
+</ul>
+</li>
+<li>有料のものならシェアはダントツでArcGIS (Esri社)(特に学術・研究で利用されている)<ul>
+<li>https://www.esrij.com/products/arcgis/</li>
+<li>Esri社の画像解析ソフトENVIも有名(https://www.esrij.com/products/envi/)</li>
+<li>https://www.esri.com/en-us/arcgis/open-vision/initiatives/open-source</li>
+</ul>
+</li>
+<li>衛星画像はとてもファイルサイズが大きいためダウンロードに時間がかかる。そのためクラウド化も進んできている</li>
+<li>Google Earth Engine<ul>
+<li>https://earthengine.google.com/platform/</li>
+</ul>
+</li>
+<li>Earth on AWS<ul>
+<li>https://aws.amazon.com/jp/earth/</li>
+</ul>
+</li>
+<li>Tellus<ul>
+<li>https://www.tellusxdp.com/ja/</li>
+</ul>
+</li>
+<li>衛星データは↓などで利用されている<ul>
+<li>地図の作成</li>
+<li>地籍の確認（土地の利用状況）</li>
+<li>などのインフラ面</li>
+<li>環境モニタリング</li>
+</ul>
+</li>
+<li>また、秘匿性が高いため、防衛面でも活用される（高額な衛星データは防衛で利用される）</li>
+<li>逆にサービスに利用される衛星画像はデータからみても画像にお金をかけるというより、サービスでの付加価値として産業の成長が見込まれている<ul>
+<li>農業分野</li>
+<li>漁業分野</li>
+<li>金融分野(石油タンクの監視)などが実例あり</li>
+</ul>
+</li>
+<li>光学センサの画像が最も市場に出回っている</li>
+<li>衛星画像の価格を左右する変数<ul>
+<li>衛星データの鮮度（撮影日が新しい画像の方が高くなる）</li>
+<li>解像度（地上分解能。より詳細な方が高くなる）</li>
+</ul>
+</li>
+<li>購入する際には最小購入面積が決まっている（単位あたりの金額と最小購入面積をかけ合わせた額から購入ができることになる）</li>
+<li>衛星画像が高額な理由は衛星の製造コストと衛星を宇宙に運ぶロケットの価格が高いからである<ul>
+<li>勿論衛星の製造コストもピンキリである</li>
+<li>近年では1億円を切るケースもあるらしい（小型衛星）<ul>
+<li>小型衛星では軌道上のトラブルはある程度許容、またはたくさん打ち上げて数機の故障は許容というコンセプトになっていることが多い</li>
+</ul>
+</li>
+<li>ロケットも運ぶ衛星の質量によって変わってくるためピンキリである<ul>
+<li>小型衛星の場合は相乗りすることが多い</li>
+<li>相乗りの場合は狙った軌道に打ち上げられないというデメリットがある</li>
+<li>そこで小型ロケット界隈も盛り上がっている（通常のロケットは大型衛星に準拠で設計されている）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>無料の衛星データ<ul>
+<li>LandsatLook Viewer<ul>
+<li>https://landsatlook.usgs.gov/</li>
+<li>アメリカ政府の衛星データ</li>
+<li>光学センサー</li>
+</ul>
+</li>
+<li>Copernicus<ul>
+<li>https://www.copernicus.eu/en</li>
+<li>ESAの衛星データ</li>
+<li>SAR, 光学センサー, 海洋観察用など</li>
+<li>Landsatより性能が良いケースも多い</li>
+</ul>
+</li>
+<li>G-portal<ul>
+<li>https://gportal.jaxa.jp/gpr/</li>
+<li>JAXAの衛星データ</li>
+<li>光学センサーデータでは欧米に負けている</li>
+<li>マイクロ波を用いた観測データが多いのが特徴</li>
+<li>降水や海面水温など画像以外の物理量からも選択できる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>無料で提供される要因<ul>
+<li>提供しているのは政府</li>
+<li>衛星データは公共インフラと考えられるため</li>
+<li>参入障壁を下げるため(イノベーションの加速)<ul>
+<li>政府が顧客になれば必ずリターンが生まれるため投資家も投資しやすい環境になっている</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="_2">基礎<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>人工衛星とは人がつくり地球や月などの天体の周りを飛んでいるもの</li>
+<li>人類史上初の人工衛星はスプートニク(約60年前)</li>
+<li>衛星は回帰日数によって観測するタイミングが異なる</li>
+<li>波長が短い順番にガンマ線-&gt;X線-&gt;紫外線-&gt;可視線-&gt;赤外線-&gt;電波</li>
+<li>青緑赤の光の波長帯に含まれる画像を合成することで可視光画像を生成できる</li>
+<li>パンシャープンとは、高解像度パンクロマティック画像と低解像度のマルチスペクトル画像の2つを合成する処理のこと<ul>
+<li>パンシャープンによって得られた合成画像は、パンシャープン画像と呼ばれ、地物の目視判読や背景画像などに利用できる</li>
+</ul>
+</li>
+<li>異なるバンド（波長）の組み合わせをすることでデータを見ることもできる<ul>
+<li>植生分布や雲の高度など</li>
+<li>ex) 植生指数 : NDVI = (近赤外-赤) / (近赤外+赤)</li>
+</ul>
+</li>
+<li>勿論、波長だけではなく、衛星の解像度なども関連してくる</li>
+<li>一番馴染みのある気象衛星は、地上約35,800km(ちょうど地球一周分)のところから天気情報を送ってくれている</li>
+<li>最近では地上1,000kmより低いところを人工衛星が多く飛んでいる</li>
+<li>スペックで重要なのは、このぐらいの地上分解能であればどのような変化が認識できるのかを把握し、その変化からわかる情報をどう活かすことができるのか</li>
+<li>2026年までに衛星画像および付加価値サービス市場は8,500億円まで成長すると言われてる年平均成長率5%を超える成長市場</li>
+</ul>
+<h2 id="_3">人工衛星の種類<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>技術試験衛星<ul>
+<li>新たな衛星技術の実証を行う</li>
+</ul>
+</li>
+<li>科学衛生<ul>
+<li>地球外の天体の観測や宇宙環境での実験を行う</li>
+</ul>
+</li>
+<li>通信衛星<ul>
+<li>衛星放送や衛星通信を可能にしているもの</li>
+<li>物理的にケーブルが引けない地域にも通信環境を提供することができる（海上や山岳地域など）</li>
+</ul>
+</li>
+<li>測位衛星<ul>
+<li>GPSに代表される位置情報を調べるもの</li>
+</ul>
+</li>
+<li>地球観測衛星<ul>
+<li>地球の様々な情報を調べる</li>
+<li>天気予報や地形情報など</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">測位衛星<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GNSS（全球測位衛星システム）<ul>
+<li>GPS (アメリカ)</li>
+<li>GLONASS (ロシア)</li>
+<li>Galileo (ヨーロッパ)</li>
+<li>BeiDou (中国)</li>
+<li>IRNSS (インド)</li>
+<li>みちびき (日本(準天頂衛星))
+    <!-- TODO: https://sorabatake.jp/6245/ --></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">地球観測衛星<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ざっくり、カメラを宇宙に飛ばしてそのデータを地球に送る役割</li>
+<li>通常のカメラは光学カメラであり人間の目と同じ可視光を捉えることができるセンサーを持っているもの<ul>
+<li>このカメラを宇宙に飛ばしているのが地球観測衛星である</li>
+</ul>
+</li>
+<li>可視光は光の一部で光には可視光でわかること以外にも情報が含まれている（これを見ることで地球の多くの情報がわかる）</li>
+<li>光は波長体によって特徴があり、人工衛星のカメラに調べたいものにあった波長を捉えることができるセンサーを搭載することで人間の目ではわからない情報を得ることができる<ul>
+<li>紫外線、可視線、赤外線、電波のようになっており、光学画像、赤外画像、電波画像などで分析している</li>
+<li>これにより、植物が良く見えるものや地表面がよく見えるものなど異なる（それぞれ、反射特性と放射特性を利用している）</li>
+<li>https://www.sapc.jaxa.jp/use/data_view/</li>
+<li>https://www.eorc.jaxa.jp/rs_knowledge/mecha_howto.html</li>
+</ul>
+</li>
+<li>センサーは光学と電波の2つに分けることができる<ul>
+<li>光学センサーは光の反射をセンサーで捉える（太陽光が地球で反射したものを衛星で捉える）<ul>
+<li>光なので夜間は観測できない</li>
+<li>植物や雲の分布は光学センサーで観測できる</li>
+</ul>
+</li>
+<li>電波を使って観測するセンサーは受動型センサーと能動型センサーがある<ul>
+<li>受動型センサーは物質から発せられる弱い電磁波（マイクロ波）を観測する。<ul>
+<li>物質からの発信のため夜間でも観測可能</li>
+<li>降水量や海面温度などがマイクロ波放射計の搭載した衛星で観測できる</li>
+</ul>
+</li>
+<li>能動型センサーの衛星ははSAR衛星とも言われ、合成開口レーダーという技術で電波を衛星から発信し地表で跳ね返ってきた電波をセンサーで捉える<ul>
+<li>これも衛星から電波を発信しているため夜間でも観測可能</li>
+<li>雲に覆われている場合の地形や森林の分布などを観測できる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>https://www.eorc.jaxa.jp/rs_knowledge/study_satellitedata.html</li>
+</ul>
+</li>
+</ul>
+<h2 id="_6">光の波長<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>人間の目で色を識別する時には物体が太陽や蛍光灯などの光を受けたときに特定の光だけが反射されて目に届いているため<ul>
+<li>目には赤・青・緑の光を判別するセンサーの役割を持つ細胞（視細胞）があり、それぞれの色の光を感じ取る割合によって決まっている</li>
+<li>光の三原色と言われるもの</li>
+</ul>
+</li>
+<li>光は光の三原色だけで構成されている訳ではなく、光は一種の電磁波であるため電波や赤外線、紫外線などと同類であり、「波長」という波の間隔の違いによって性質が異なる<ul>
+<li>波長は電磁波一つ分の波の長さであり、この違いによって色の違いや音の違いを認識できている</li>
+</ul>
+</li>
+<li>人間の目では電磁波の中でも可視線という限られた波長帯しか見ることができない(三原色の組み合わせで捉えている)</li>
+<li>人工衛星ではこの人の目では捉えられない紫外線や赤外線、電波をセンサーによって捉えることができるため人の目では検知できない情報が検知できる</li>
+<li>光の波長によって、見えるものが異なるのは、物質によって光（電磁波）の反射や放射の仕方が異なるため<ul>
+<li>例えば植物なら赤外線の波長で見る方が分布（植生）をはっきり捉えることができる</li>
+</ul>
+</li>
+</ul>
+<h3 id="_7">青い光の波長帯<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>0.4-0.5μm前後</li>
+<li>土壌分布や落葉樹、針葉樹の分別などに適している</li>
+<li>空気中のちり（エアロゾル）を見るのにも適している</li>
+<li>青い光の波長より短い波長体を紫外線、さらに短いものはX線,ガンマ線と言われるが、人工衛星の波長では青い光の波長帯からがよく使われる</li>
+</ul>
+<h3 id="_8">緑の光の波長帯<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>0.5-0.6μm</li>
+<li>植物の「活性度」を見るのに比較的適している</li>
+</ul>
+<h3 id="_9">赤い光の波長帯<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>0.6-0.7μm</li>
+<li>水域と陸域の区別が青や緑と比べてはっきりとわかる</li>
+<li>植生もよりはっきり見える</li>
+</ul>
+<h3 id="nir">近赤外線(NIR)の波長帯<a class="headerlink" href="#nir" title="Permanent link">&para;</a></h3>
+<ul>
+<li>0.7-1.0μm</li>
+<li>赤外線は可視線の波長に近い方（赤外線からしたら短い方）から近赤外、中間赤外、熱赤外などと分類がある<ul>
+<li>これは資料によって分類が異なっているらしい（短波赤外や遠赤外などがあるケースも）</li>
+</ul>
+</li>
+<li>赤外線の波長は人間の目では捉えることができず可視線の画像と比べると陸と水がはっきり区別され、植物が強く反射するため植生を調べるのに利用される</li>
+<li>高層建築物の集まっている市街地は植生に比べ暗く見える</li>
+<li>Sentinel2では近赤外線の波長帯をバンドで細かく分けているため、細かい波長の違いで植生を調べることができる</li>
+</ul>
+<h3 id="_10">中間赤外線の波長帯<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1.0-6.0μm</li>
+<li>この波長では水は良く反射し、氷はあまり反射しない</li>
+<li>水が多く含まれる低い雲は明るく映り、上空にあり雪や氷の粒が多い雲や雪、流氷などが暗く映る</li>
+<li>火など高温な物体の放射も捉えられる</li>
+<li>地表面では草地や裸地が白っぽく見え、都市部は暗く見えるため、土壌分布の違いを見ることにも利用される</li>
+<li>水域と陸域もはっきりと区別できるため、河川を見るのにも適している</li>
+</ul>
+<h3 id="tir">熱赤外線(TIR)の波長帯<a class="headerlink" href="#tir" title="Permanent link">&para;</a></h3>
+<ul>
+<li>6.0-13.0μm</li>
+<li>このくらいの波長になると太陽光が地面に反射した光ではなく、物質自身が発する電磁波を捉えるようになる</li>
+<li>雲や植物も電磁波を発しているため、特定の波長を観測することで見えるものが異なる</li>
+<li>熱赤外の中でも波長が短い(6-7μm程度)では水蒸気量を観測できる</li>
+<li>8-10μm程度では、二酸化硫黄(火山活性など)やオゾンの分布などが観測できる</li>
+<li>大気中の成分分析に熱赤外線が利用されている</li>
+<li>波長の長い熱赤外線(12-13μm程度)は大気中の氷晶の影響を受けるため波長が長い方から短い方の差分を出すことで雲の高度の差を調べることもできる</li>
+</ul>
+<h3 id="gsd">地上分解能（GSD）<a class="headerlink" href="#gsd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>衛星の視力に例えられる</li>
+<li>衛星ごとによって個体差がある<ul>
+<li>これは地上からの距離が同程度であっても変わる(見えるもの・わかるものが変わる)</li>
+</ul>
+</li>
+<li>地上分解能が3mGSDの場合「画像中の1pxで地上における3mの情報を撮影している」という意味になる<ul>
+<li>地上で3mほどの大きさがある物体を認識可能であるという意味</li>
+</ul>
+</li>
+<li>世界最高峰のWorldView4(0.3mGSD)では人間を認識することもできる</li>
+<li>基本的にはよく見える画像ほど購入費用が高くなるため目的に応じて購入する衛星の地上分解能を選ぶ必要がある</li>
+</ul>
+<h3 id="swath">観測幅(swath)<a class="headerlink" href="#swath" title="Permanent link">&para;</a></h3>
+<ul>
+<li>衛星は軌道の進行方向に対して垂直方向にスキャンしながら撮影をする</li>
+<li>このスキャンする幅のことを観測幅という</li>
+<li>基本的には観測幅が狭いほど地上分解能は高くなる<ul>
+<li>現在無料で利用できる衛星の地上分解能は10m程度</li>
+</ul>
+</li>
+<li>パンシャープンという、カラーな可視光の画像に対して、より細かく見えているパンクロ（白黒）画像をかけ合わせることで、擬似的に高分解能なカラー画像を作り上げることができる(WorldView4もこれにより、0.3mGSDを実現している)</li>
+</ul>
+<h3 id="_11">回帰日数<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>衛星の撮影頻度のこと<ul>
+<li>衛星が同じ地点に戻ってくる頻度のこと</li>
+</ul>
+</li>
+<li>多く衛星が打ち上がっている場合は回帰日数が短くなる</li>
+<li>衛星コンステレーション(多数の人工衛星を協調して動作させる運用方式)によって撮影頻度の課題を解決する動きもある</li>
+</ul>
+<h3 id="_12">地方時<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>衛星の撮影タイミングのこと<ul>
+<li>いつの時間帯の写真を撮影できるのか</li>
+</ul>
+</li>
+<li>現在ではほぼ同じ時間帯で多くの衛星が撮影を行っている(10-11時)</li>
+<li>この理由は大気が温まる午後になると水蒸気が発生しモヤがでるため、写真を綺麗に撮影することが難しいため</li>
+</ul>
+<h2 id="_13">衛星データの種類<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">光学センサ<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>最も一般的で可視光(VIS)と近赤外(NIR)領域の光を集めている</li>
+<li>デジカメと同じ原理</li>
+<li>太陽光の反射を見ている受動型センサである(夜間は利用できない)</li>
+<li>白黒の画像はパンクロマティック(PAN)、カラー画像はマルチスペクトルという<ul>
+<li>マルチはRGBなど複数波長の画像を重ね合わせて1枚のカラー画像にしている</li>
+</ul>
+</li>
+<li>同一衛星の場合、パンクロの方が解像度が高くなる</li>
+<li>マルチの画像にパンクロの画像を重ねカラー画像をシャープにした画像をパンシャープンという</li>
+<li>物体は波長毎に反射する太陽光の強さが異なる（色が異なって見える要因）ため、それを利用して物質を識別する</li>
+</ul>
+<h3 id="sar">SARセンサ<a class="headerlink" href="#sar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>合成開口レーダー(SAR)はセンサからマイクロ波を放出し、地表で跳ね返ってきたマイクロ波を捉えるセンサ(能動型センサ)</li>
+<li>ざらざらした表面ほど多く電波が返ってくるため白く見え、水面などつるつるした表面では電波が返ってこないため（反射による）黒く見える</li>
+<li>光学センサのような画像ではなく、エコー画像のような感じになる</li>
+<li>SARは自ら発信したマイクロ波を利用して観測するため常に同じ条件で観測ができる（夜間でも可能）<ul>
+<li>そのためBefore/Afterで見比べて変化を検出することができる</li>
+<li>電波は雲があっても通過できるため影響を受けない</li>
+</ul>
+</li>
+<li>SARにも観測周波数があり、Lバンド(1-2GHz)、Cバンド(4-8GHz)、Xバンド(8-12GHz)の3つがよく使われ、順番に波長が短くなっている<ul>
+<li>Lバンド（一番波長が長い）では葉や枝は通過するため、地面の様子がわかる。広範囲の地殻変動などで利用されている</li>
+<li>Cバンドは枝で反射される</li>
+<li>Xバンドでは葉や草で反射する</li>
+</ul>
+</li>
+<li>SAR衛星では偏波という機能もある。振動方向によって垂直偏波(V:vertical)、水平偏波(H:horizontal)に分けられる(送信、受信)<ul>
+<li>水平偏波で送信し、水平で受信はHH, 垂直で受信はHV</li>
+<li>垂直偏波で送信、垂直で受信はVV, 水平で受信はVHという(大きな衛星の場合、水平と垂直を同時に受信できるものがある(HH-HV))</li>
+<li>物体の特性によって入射した電波をどう反射するかが異なるため反射の強さが異なって見えるため(物体の偏波特性による)</li>
+</ul>
+</li>
+</ul>
+<h3 id="_15">熱赤外センサ<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>可視光よりも長い波長域を見ている</li>
+<li>地表面の温度を観測しており、物質自体が発する電磁波を見ている（受動センサ）（夜間観測可能）</li>
+<li>これも光学センサに比べると解像度は低い</li>
+<li>逆に観測範囲は広い</li>
+</ul>
+<h3 id="_16">ライダー<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SARと同じような原理だが、マイクロ波ではなく光学(レーザー光)を使うセンサ（能動型センサ）</li>
+<li>光の跳ね返りから大気中の粒子の濃度を測定している</li>
+<li>ドップラー効果を利用することで大気中の粒子の動き（風速）を知ることもできる</li>
+<li>レーザー光のため、観測範囲は狭い</li>
+</ul>
+<h3 id="_17">マイクロ波放射計<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>マイクロ波を受動的に観測</li>
+<li>気温分布や大気中の気体の吸収特性、水や氷粒子の吸収・散乱特性が観測できる</li>
+<li>解像度は低く、画像にはならないので解析は専門知識が必要となる</li>
+</ul>
+<h3 id="_18">マイクロ波高度計<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>センサからマイクロ波を発射して返ってくるまでの時間から高度を計算する(能動センサ)</li>
+<li>高精度だが、マイクロ波は照射される範囲全体の平均高度となるため、主に海面の高度計として利用されている</li>
+</ul>
+<h3 id="_19">マイクロ波散乱計<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>海面に電波を照射すると電波の波長に近い長さを持つ海面波の成分が散乱してレーダーに信号が受信される</li>
+<li>この信号の強さは海上に吹いている風によって左右される（風向きと強さ）ため海上風の観測ができる</li>
+</ul>
+<h3 id="_20">降雨レーダー・雲レーダー<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>大気中の雨や雲などの降水粒子に反射する波長のマイクロ波(Ka帯,Ku帯)を用いると大気中の雨や雲の様子が観測できる（能動センサ）</li>
+</ul>
+<h3 id="gps-ro">GPS RO（掩蔽センサ（えんぺい））<a class="headerlink" href="#gps-ro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>降雨レーダーのようなことをGPSの電波の散乱具合を使って観測している</li>
+<li>電波の発射をしなくてすむため小型化できることが期待されている</li>
+</ul>
+<h3 id="_21">地上から電波にのせて発信されている情報を収集したもの<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>船舶の情報収集AIS (船舶自動識別システム)<ul>
+<li>衝突防止の観点から海上では常にきめられた電波を発信し、周囲に位置情報や速度を知らせることが義務付けられている</li>
+<li>これを衛星で追跡している</li>
+</ul>
+</li>
+<li>航空機の情報収集ADS-B<ul>
+<li>航空機版で飛行中の航空機の情報を収集</li>
+</ul>
+</li>
+</ul>
+<h2 id="_22">衛星データの取得頻度<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>衛星データの取得頻度は静止衛星と地球低軌道衛星に分けられる</li>
+<li>静止衛星は地球の自転に合わせて常時観測地点が見える場所に衛星が位置するため衛星データも常に取得することができる</li>
+<li>地球低軌道衛星は衛星によって頻度もデータ取得時刻もばらばら</li>
+<li>これを把握するためには回帰日数と地方太陽時が指標としてある<ul>
+<li>回帰日数は観測頻度のことで任意の地点から同じ場所に戻ってくるまでの日数（複数機ある場合は短くなる）<ul>
+<li>カメラを動かすこともできたり、観測領域が広かったりすると観測頻度を上げることができる</li>
+</ul>
+</li>
+<li>地方太陽時は太陽同期軌道を回っている衛星では、衛星の真下の地表の時刻が常に一定になる（その時刻のこと）<ul>
+<li>例えば赤道通過地方太陽時が10:00の場合は、撮影できる時間は世界中の10:00と逆の22:00のみとなる（正確には各国の時刻は時刻の定めがあるためずれるけど）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>光学センサの場合は太陽の光を利用するため太陽同期軌道を選択することが多い（午前軌道を利用する）</li>
+<li>超小型衛星によるコンステレーションを採用している場合は軌道をあまり気にせずに投入しているケースもある</li>
+<li>SARの場合は太陽光の影響は直接は関係ないが、電波を発信する電力が大きく、太陽光による発電が必要なため、6/18時の軌道をとることが多い(Dawn-Dusk軌道)</li>
+</ul>
+<h2 id="_23">衛星データの活用例<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<ul>
+<li>土地被覆分類</li>
+<li>NDVI(植生指標)(赤外線)</li>
+<li>DEM(Digital Elevation Model)(高度、3次元地図)<ul>
+<li>2方向から撮影した光学センサの画像を用いて高度情報を含む3次元の地図を作成することができる</li>
+</ul>
+</li>
+<li>差分抽出(SAR)</li>
+</ul>
+<h2 id="_24">その他<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>良い本はなかったのでネットで勉強がよい（宇宙工学とかならあるけど、本自体がかなり高額なのと領域がすこしずれているのでネットメインで。）</li>
+<li>地図系のサービス<ul>
+<li>Googleマップ</li>
+<li>Yahoo!地図</li>
+<li>ゼンリン地図</li>
+<li>MapFan</li>
+<li>Open Street Map</li>
+<li>国土地理院</li>
+</ul>
+</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="フッター" >
+      
+        
+        <a href="../../architecture/character_code/" class="md-footer__link md-footer__link--prev" aria-label="前: 文字コード" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              文字コード
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../iso/" class="md-footer__link md-footer__link--next" aria-label="次: ISO" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              ISO
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2022 hirotoyoshidome.
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/hirotoyoshidome" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/kichiru27_32" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../js/index.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2238 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技術系ブログです。">
+      
+      
+        <meta name="author" content="hirotoyoshidome">
+      
+      
+        <link rel="canonical" href="https://kichiru.com/blogs/2018/summary_agile/">
+      
+      <link rel="icon" href="../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>アジャイル開発の知識まとめる - Kichiru's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-0G7J0KZQSW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-0G7J0KZQSW",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G7J0KZQSW"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="Kichiru&#39;s Blog" class="md-header__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../../images/yoshi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kichiru's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              アジャイル開発の知識まとめる
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Kichiru&#39;s Blog" class="md-nav__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../../images/yoshi.png" alt="logo">
+
+    </a>
+    Kichiru's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        トップ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          がんばらないブログ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="がんばらないブログ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          がんばらないブログ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/my_opinion_startup/" class="md-nav__link">
+        スタートアップに転職して2年半たったのでちょっと書く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/how_to_use_web_push/" class="md-nav__link">
+        Webプッシュの使ってみる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/how_to_analyze_data/" class="md-nav__link">
+        僕がデータを見る時にやってること
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          2019
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2019" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2019
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/zombie_process_python/" class="md-nav__link">
+        ゾンビDocker&Pythonで作ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/memo_tls/" class="md-nav__link">
+        TLSの基礎知識
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/entry_docker/" class="md-nav__link">
+        Docker 入門してみた備忘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/about_blockchain/" class="md-nav__link">
+        ブロックチェーンとは？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/infra_command/" class="md-nav__link">
+        インフラエンジニアやっていてよく使うコマンド集!!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/look_back_infra/" class="md-nav__link">
+        インフラやり始めて半年経ったため振り返る
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/cache_hit_rate/" class="md-nav__link">
+        cacheのヒット率を測定するツールを作成しました
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/entry_django/" class="md-nav__link">
+        Djangoのチュートリアルやったためまとめとく
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/think_about_web_development/" class="md-nav__link">
+        転職することになった今だから思うことの話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/ci_cd_aws/" class="md-nav__link">
+        AWSでCI・CD環境を構築
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/entry_front_css/" class="md-nav__link">
+        フロントもさわるようになって絶望的にCSSができなかったため勉強した話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/ubuntu_from_windows10/" class="md-nav__link">
+        Windows10環境捨ててUbuntuにした結果...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/aws_basic_design/" class="md-nav__link">
+        AWSを使用した基本設計について考えてみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/github_circleci_heroku_cd/" class="md-nav__link">
+        GitHub+CircleCI+Herokuでプッシュしたらデプロイの仕組みをつくる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/about_blockchain_detail/" class="md-nav__link">
+        ブロックチェーンについて何もわからない人へ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          2018
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2018" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2018
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssl_grade/" class="md-nav__link">
+        WebサイトのSSL化(HTTPS)の3つのグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stop_double_send/" class="md-nav__link">
+        二重送信防止についての備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handling_file_upload/" class="md-nav__link">
+        ファイルアップロード時の処理について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memo_tcp_ip/" class="md-nav__link">
+        TCP/IPの備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crlf_lf/" class="md-nav__link">
+        改行コードについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spring_context_error/" class="md-nav__link">
+        SpringFrameworkのコンテキストエラーについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint_first_content/" class="md-nav__link">
+        SpringFrameworkの初期表示について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java8_stream_api/" class="md-nav__link">
+        Java8 Stream API 使ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spring_jsp_tag/" class="md-nav__link">
+        SpringFrameWorkでのJSP拡張タグの注意点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review_pull_request/" class="md-nav__link">
+        プルリクの粒度とレビューに関する完全に独断と偏見のまとめ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_ruby_rails_windows/" class="md-nav__link">
+        WindowsでRuby, Railsをインストールする際に躓いた箇所
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ruby_anemone/" class="md-nav__link">
+        Rubyでanemoneを使用してURLを取得するだけ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_laravel/" class="md-nav__link">
+        Laravel導入 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_shell/" class="md-nav__link">
+        基本的なシェルスクリプト 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version_up_mysql5/" class="md-nav__link">
+        MySQL5.6→5.7バージョンアップ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_docker_windows/" class="md-nav__link">
+        Docker for Windows を入門してみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_ruby/" class="md-nav__link">
+        ApacheでRubyを起動するときの設定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rails_server_sqlite3/" class="md-nav__link">
+        rails server でsqlite3のエラーが出た話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beginner_mysql_command/" class="md-nav__link">
+        MySQL コマンドチートシート 初心者向け
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rails_minitest_mock/" class="md-nav__link">
+        Rails MiniTestでモックを使用する方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_motivation/" class="md-nav__link">
+        モチベのおはなし
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          アジャイル開発の知識まとめる
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        アジャイル開発の知識まとめる
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_rundeck/" class="md-nav__link">
+        必殺ジョブスケジューラ!!Rundeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vagrant_ssh_teraterm/" class="md-nav__link">
+        VirtualBox, Vagrantを使用してUbuntuを仮想マシンとして導入しTeraTermでSSH接続する
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_cdn/" class="md-nav__link">
+        CDN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_cookie/" class="md-nav__link">
+        Cookie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_session/" class="md-nav__link">
+        Session
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/data_structure/" class="md-nav__link">
+        データ構造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_db/" class="md-nav__link">
+        DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/oauth/" class="md-nav__link">
+        OAuth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/algorithm/" class="md-nav__link">
+        アルゴリズム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/nosql/" class="md-nav__link">
+        NoSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/database/" class="md-nav__link">
+        データベース
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/elasticsearch-opensearch/" class="md-nav__link">
+        ElasticsearchとOpenSearch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          インフラ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="インフラ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          インフラ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infrastructure/about_aws/" class="md-nav__link">
+        AWSについて
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          機械学習
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="機械学習" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          機械学習
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/about_ml/" class="md-nav__link">
+        機械学習
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/recommendation/" class="md-nav__link">
+        レコメンデーション
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/differential_equations/" class="md-nav__link">
+        微分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/integral/" class="md-nav__link">
+        積分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/trigonometric_functions/" class="md-nav__link">
+        三角関数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/linear_algebra/" class="md-nav__link">
+        線形代数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability_statistics/" class="md-nav__link">
+        確率・統計
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          ネットワーク
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ネットワーク" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          ネットワーク
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/about_osi/" class="md-nav__link">
+        OSI参照モデル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/tcp_ip/" class="md-nav__link">
+        TCP/IP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/proxy/" class="md-nav__link">
+        プロキシ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/protocol/" class="md-nav__link">
+        プロトコル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          セキュリティ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="セキュリティ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          セキュリティ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/phishing/" class="md-nav__link">
+        フィッシング詐欺
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/multi_factor_authentication/" class="md-nav__link">
+        多要素認証
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/free_wifi/" class="md-nav__link">
+        Free Wi-fi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/secure_guide/" class="md-nav__link">
+        サービスを安全に利用するために
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/log/" class="md-nav__link">
+        ログ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          アーキテクチャ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="アーキテクチャ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          アーキテクチャ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/bit/" class="md-nav__link">
+        データの単位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/character_code/" class="md-nav__link">
+        文字コード
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          その他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="その他" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          その他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/satellite/" class="md-nav__link">
+        人工衛星データ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>アジャイル開発の知識まとめる</h1>
+
+<ul>
+<li>
+<p>2018/10/28</p>
+</li>
+<li>
+<p>タスクの粒度はなるべく小さくすることを心がける</p>
+<ul>
+<li>タスクの粒度が大きいとやるべきことが埋もれてしまったり、工数の計算が曖昧になってしまうため遅延につながってしまう</li>
+<li>タスクの粒度を小さくすることでクライアントとの話を詰めることも容易となり作業が明確となる</li>
+<li>分割統治法を採用してタスクの粒度を小さくすることで認識齟齬を少なくすることが目的(開発者to開発者 or クライアントto開発者)</li>
+</ul>
+</li>
+<li>棚卸(タスクにする)のときにタスクは何をもって完了なのか、タスクの目的などを簡単に記述しておくことでタスクを振られた人との認識を合わせやすい<ul>
+<li>タスクの名称(名詞のみとか)のみであると何をするタスクなのかの認識齟齬が起きやすいため</li>
+</ul>
+</li>
+<li>朝会は重要で、朝会では昨日の行ったタスクの現状、今日行うタスクの現状、昨日のタスクで見つかった問題点の3点を軸として行うと良い<ul>
+<li>リーダーは自分の話やプロジェクトの話だけを行うのではなく、メンバーの話を聞く場として行うことが望ましい</li>
+</ul>
+</li>
+<li>朝会、昼会、夕会のどれかは最低行うこと<ul>
+<li>チーム内でのミーティングがないとメンバーのだれがどのタスクを行っているかが明確ではなく遅延が発生する場合が多い</li>
+<li>タスクや作業を共有しておくことで遅延が発生した場合やはまっているときにチームで解決しやすい</li>
+</ul>
+</li>
+<li>個人レベルでのタスクマネジメントを行うことで今日行うタスク、昨日の問題点などの考えをまとめておくことで翌日のタスクマネジメントがしやすくなる</li>
+<li>KPT法(Keep Problem Try)を行ってふりかえりを行うことは重要である<ul>
+<li>頻度は最初のうちは週に1度の頻度で、慣れてきたら2週に1度ほどの頻度が望ましい</li>
+<li>月に1度の様な頻度では少なすぎて振り返る内容を忘れてしまう、逆に頻度が多すぎても振り返る内容が少なく時間効率が悪い</li>
+</ul>
+</li>
+<li>タスクの管理は表計算ソフト(Excelの様な)ではなくできるだけ付箋を使用してタスクボードを作成することが望ましい<ul>
+<li>最近はRedMineやJIRAの様なクラウド上で管理できるソフトウェアもあるが慣れないうちは1度で見渡すことのできるタスクボードと付箋が良い</li>
+</ul>
+</li>
+<li>素朴理論とは経験から固めた「経験則」のことで、<ul>
+<li>ここから自分で考えた言葉にしていくことでバルブ型理解へと変化する(わかりやすい説明)</li>
+<li>さらにこれを教育(説明)していくことで原理原則、科学的概念へと変化していく</li>
+</ul>
+</li>
+<li>氷山モデルとは海の外に出ている氷山は一角にしかすぎないことを比喩して表面に出ている部分を「出来事」とするとその下層にパターン、構造、メンタルモデルが隠れているということである<ul>
+<li>メンタルモデルとは関係者の理念や世界観のことで認知バイアス(経験や先入観によって無意識のうちに判断や評価をしてしまうこと)がかかわってくるため普段、習慣化されている出来事に対して変革を与えること困難であること</li>
+<li>そのため1人では解決することが難しく、組織(プロジェクトやチーム)で対話していくことが重要となる</li>
+</ul>
+</li>
+<li>アジャイルな手法(反復開発手法)としてスクラムという開発フレームワークがある</li>
+<li>スクラムではスプリント(繰り返される開発期間のこと)、スプリントランニング(スプリントで何をするのかを決定する計画ミーティング)、デイリースクラム(朝会のようなミーティング)、スプリントレビュー(スプリントの終わりに作成物のレビューしてフィードバックをもらうミーティング)、スプリントレトロスペクティブ(改善をするミーティング)の工程より成り立っている</li>
+<li>プロダクトオーナー(プロダクトの最高責任者)、開発チーム、スクラムマスター(チームが成果を挙げるため支援する)の立場で成り立つ</li>
+<li>プロダクトバックログとは実装するプロダクトの要求、要望、機能の一覧などを記載しているもの</li>
+<li>スプリントバックログとはプロダクトバックログよりスプリントの期間内に行うプロダクトバックログアイテムの一覧</li>
+<li>インクリメントとは動作するプロダクトのこと</li>
+<li>スクラムでは透明性、検査、適応が重要で経験主義な開発手法である<ul>
+<li>早いタイミングで失敗しておくことで改善をしていく考え方</li>
+</ul>
+</li>
+<li>ファシリテートとはミーティング等で発言や参加を促したり合意形成をしたりする能力</li>
+<li>ベロシティとはスプリントの中でチームが開発できる量のこと</li>
+<li>リファインメントとはスプリントの途中でプロダクトバックログをメンテナンスする活動のこと</li>
+<li>スプリントゴールとは簡潔な言葉で何をもってスプリントを完了とするかを決定するものである</li>
+<li>完成の定義とはメンバー全員が共通の認識を持っておかなければならないもの</li>
+<li>受け入れ条件とはこれらを満たしていれば要求を確かに実現していると判断できるリストのこと<ul>
+<li>完成の定義や受け入れ条件を明確にしておくことで進捗のDoingとDone、プロダクトバックログアイテムの完成イメージがつきやすくなるためスプリントランニング(MTG)で認識を合わせておくこと</li>
+</ul>
+</li>
+<li>インセプションデッキとはスプリントを開始する前に作成するものでプロジェクトのWhyやHowを明確にしていく<ul>
+<li>チーム全体で作成するもの(リーダーだけが作成するものではない)</li>
+</ul>
+</li>
+</ul>
+<p>Whyを明らかにする問い</p>
+<ul>
+<li>なぜここにいるのか(プロジェクトのミッションは何か)</li>
+<li>エレベーターピッチ(プロダクトのニーズ、顧客、差別化ポイントとは何か)</li>
+<li>パッケージデザイン(ユーザーからみたプロダクトの価値とは何か)</li>
+<li>やらないことリスト(スコープ)</li>
+<li>ご近所さんを探せ(チームを取り巻くステークホルダとはだれか)</li>
+</ul>
+<p>Howを明らかにする問い</p>
+<ul>
+<li>技術的な解決策(採用する技術やアーキテクチャは何が考えられるか)</li>
+<li>夜も眠れない問題(不安やリスクには何があるか)</li>
+<li>期間を見極める(必要な開発期間はどれくらいか)</li>
+<li>トレードオフスライダー(ローンチ時期、スコープ、予算、品質はどのような優先順位となるか)</li>
+<li>
+<p>何がどれだけ必要となるか</p>
+</li>
+<li>
+<p>ゴールデンサークルとは中心からWHY, HOW, WHATの順でなっている円のことで通常は一番外のWHATから考え始めてしまうが(簡単なため)
+しかしWHYから考え始めることでHowの選択肢が多くなるとこ</p>
+</li>
+<li>
+<p>WorkAgreementとはチーム内で決めたルールのこと</p>
+<ul>
+<li>チーム内での認識齟齬を少なくするためなるべく具体的な内容をルールとして定めると良い</li>
+<li>インセプションデッキとは別のものであくまでチーム内での取り決め</li>
+<li>KPT法などでKeepとして良い習慣としてチームで決まったもの等をWorkAgreementに追加していくことで新規アサインがあった時でもチーム内のルールを把握することが容易となる</li>
+</ul>
+</li>
+<li>
+<p>成功循環モデルとは関係の質、思考の質、行動の質、結果の質が循環しているということで結果の質だけを求めて行動をしていても他の質の向上も必須であること</p>
+<ul>
+<li>グッドサイクルになることを目指していく(コミュニケーションの必要性)</li>
+</ul>
+</li>
+<li>
+<p>ドラッガー風マネジメントでは</p>
+<ul>
+<li>内側の期待 - チームにおける期待</li>
+<li>外側の期待 - プロジェクト関係者における期待</li>
+</ul>
+</li>
+</ul>
+<p>チーム内のメンバーが</p>
+<ul>
+<li>何が得意なのか</li>
+<li>どうやって貢献するのか</li>
+<li>大切に思う価値観</li>
+<li>メンバーはどんな期待なのか</li>
+</ul>
+<p>を中心に話し合っていくことでメンバーへの理解が深まり手戻りが発生しなくなる</p>
+<ul>
+<li>クネビンフレームワークで表現されているようにプロジェクトはシンプル、煩雑、複雑、カオスに分類される<ul>
+<li>シンプルとは誰が見ても理解できるので既存のベストプラクティスを適用すればよいもの</li>
+<li>煩雑とは専門知識が必要で問題の分析によって計画的なプロジェクト化が可能</li>
+<li>複雑とは問題分析だけでは理解は不可能で反復買う動を繰り返す必要があるもの</li>
+<li>カオスとは対象を理解することすら難しく、常に確認をする必要があるもの</li>
+</ul>
+</li>
+<li>リファインメントとはプロダクトオーナーだけが行えばい良いものではなく、開発メンバーも取り組む必要があるもの<ul>
+<li>スプリントレビューの期間以外でも行われ、スプリントが開始している場合はスプリントゴールに悪影響が出ないようにすること</li>
+<li>開始されている場合はすでに合意しているコミットメントが最優先される</li>
+</ul>
+</li>
+<li>狩野モデルとは魅力的品質、一元的品質、当たり前品質によってあらわされたグラフで<ul>
+<li>魅力的品質とは充足されれば満足だが不充足でも仕方がないもの</li>
+<li>一元的品質とは充足されれば満足、不充足であれば不満を引き起こすもの</li>
+<li>当たり前品質とは充足されて当たり前、不充足であれば不満を引き起こすもの</li>
+</ul>
+</li>
+<li>向き直りとは進むべき先をとらえて現在と正す方法である<ul>
+<li>振り返りとはアプローチの仕方が逆となる</li>
+<li>プロジェクトが遅れ気味のときや方向性の確認の際に使用される</li>
+</ul>
+</li>
+<li>星取表とはスキルマップのことでメンバーがどのようなスキルを持っているかを見える化する<ul>
+<li>新規アサインがあった場合にタスクを振り分ける際などに使用される</li>
+</ul>
+</li>
+<li>モブプログラミングとは1台のPCでみんなでコーディングを行うこと<ul>
+<li>コミュニケーションの改善とレビューが不要なことによるプロセスフロー改善、学習効果が期待できる</li>
+</ul>
+</li>
+<li>TWIとはTrainingWithinIndustryのことで職場教育の手法<ul>
+<li>JI(JobInstruction)という仕事の教え方が紹介されている(習う準備、作業の説明、やらせてみる、教えた後を見る)</li>
+</ul>
+</li>
+<li>バリューストリームマッピングはプロダクトの価値がお客様の手に渡るまでの仕事の流れを見える化するためのプラクティスのこと<ul>
+<li>プロセスを改善するためだけでなくコミュニケーションの改善にも使用される</li>
+</ul>
+</li>
+<li>プロセスタイムとは事実上そのプロセスを実行している作業時間のこと</li>
+<li>リードタイムとはプロセスが次のプロセスに移行するまでの所要時間のこと</li>
+<li>バリューストリームマッピングではプロセス名、アーキテクチャ、担当や人数、リードタイム、プロセスタイム、ハンズオフ(次工程が同じ担当かどうか)などを記載する<ul>
+<li>リードタイム-プロセスタイム=待ち時間と算出できるが待ち時間よりボトルネックとなっている箇所について改善をする</li>
+<li>また、手戻りが発生している箇所についても改善をする</li>
+</ul>
+</li>
+<li>ECRSとはEliminate(排除)、Combine(結合)、Rearrange(交換)、Simplify(簡素化)の観点から改善をする手法である<ul>
+<li>排除では必要な業務かどうかを見極め、結合では待ち時間の短縮を図る、交換では順番を変更することで時間の短縮を図ること、簡素化では複雑なタスクを単純化することで効率を上げる</li>
+</ul>
+</li>
+<li>カンバンとは今やっているフローをステージ化することで仕事の流れを見える化する方法である<ul>
+<li>カンバンではReady状態になったプロダクトバックログアイテムが完了になるまでの時間、定期的に完成したプロダクトバックログアイテムの数を計測することでチームの仕事のスピードを可視化でき体感することができる</li>
+</ul>
+</li>
+<li>ポストモーテムとはプロジェクトの終了後プロジェクトを振り返って行う事後検証のことである</li>
+<li>タックマンモデルとは形成期(Forming)、混乱期(Storming)、統一期(Norming)、機能期(Performing)の4つの時期に分け、チームの成長過程を表したものである<ul>
+<li>チームビルディングをする際にタックマンモデルの統一期になり作業効率が上がるようなグラフである</li>
+</ul>
+</li>
+<li>リーダーズインテグレーションとはリーダーとメンバーの間の信頼感を醸成するためのワークショップのことである</li>
+<li>モダンアジャイルとは<ul>
+<li>人々を最高に輝かせる</li>
+<li>安全を必須条件にする</li>
+<li>高速に実験＆学習する</li>
+<li>継続的に価値を届ける</li>
+</ul>
+</li>
+</ul>
+<p>を基本原則に成り立っている</p>
+<ul>
+<li>アジャイルな見積もり、アジャイルな計画づくりとは<ul>
+<li>規模の見積</li>
+<li>見積もったストーリーポイントの合計</li>
+<li>期間への交換</li>
+<li>スケジューリング</li>
+</ul>
+</li>
+</ul>
+<p>の流れで見積もりから計画までを行っていくこと
+* 必要なスプリント数はストーリーポイントの合計÷チームのベロシティで算出できる
+* ベロシティとはチームが1スプリントで発揮できる作業量のことである</p>
+<ul>
+<li>
+<p>プランニングポーカーとは開発メンバーがポーカーの感じでタスクに対して数字のカードを見積もりとして出していき満場一致となった数字がそのタスクの工数となるような見積もりの仕方</p>
+<ul>
+<li>実際に開発する人が見積もりを行うため正確な結果が出やすい</li>
+<li>リリース日などを決めておきこれを考慮しながら計画づくりをしていく方法もできる(リリースプランニング)</li>
+</ul>
+</li>
+<li>
+<p>CCMP(CriticalChainProjectManagement)とは、各タスクには個別のバッファを持たせずに見積もりをして全体のバッファとして見積もりを行って管理する方法である</p>
+<ul>
+<li>個別にバッファを持つよりバッファの量が減って生産性が上がるがバッファを早いタイミングで使用してしまうと後に大変なことになってしまう→炎上プロジェクト化してしまう危険性</li>
+</ul>
+</li>
+<li>
+<p>パーキンソンの法則とは仕事の量は完成のために与えられた時間を満たすまで膨張するという法則である</p>
+<ul>
+<li>この法則のため先述のCCMPが有効となるケースがある</li>
+</ul>
+</li>
+<li>
+<p>SoE(System of Engagement)とは主にエンドユーザーとやり取りをし、関係性を育んでいくようなシステム</p>
+</li>
+<li>
+<p>SoR(System of record)とは主に業務遂行を支える側のシステム</p>
+</li>
+<li>
+<p>スクラムオブスクラムとは各チームのスクラムマスターの人たちが集まってMTGを行うこと</p>
+</li>
+<li>
+<p>コンウェイの法則とはアーキテクチャは組織に従う。組織はアーキテクチャに従う。という法則である</p>
+<ul>
+<li>小さい開発規模の場合、チームごとに徐々に専門性に特化していくため組織はアーキテクチャに従う</li>
+<li>逆に開発の規模が大きくなるとチームごとに役割を分担する場合が多いがそうすると全体を見る機会が減り、アーキテクチャが組織に依存するようになってしまう</li>
+</ul>
+</li>
+<li>
+<p>デイリーカクテルパーティーとはプロジェクト内のコミュニケーションの経路を繋ぐやり方でチームでの朝会、チームリーダー同士のチームリーダーMTG、プロジェクトリーダー(PL)やプロジェクトマネージャー(PM)などのMTGの様に3層構造になっているMTGのことである</p>
+</li>
+<li>
+<p>デザインプロセスではサイトの全体像、スケッチ、ペーパープロトタイピング(スケッチのプロトタイプ化)、ワイヤーフレーム(情報設計)、ビジュアルデザイン(トーンとマナーを守りつつ本番同様のビジュアル要素を決める)、コーディング(HTML，CSS)の様な工程で進んでいく</p>
+<ul>
+<li>開発チームと共同して開発を行うことが一般的だが機能の開発を先に開発チームに行ってもらってからデザインのコーディングという開発の仕方もあるみたい</li>
+</ul>
+</li>
+<li>
+<p>ユーザーストーリーではWHO, WHAT, WHYを軸に考えていくと良い</p>
+</li>
+<li>
+<p>INVESTとは</p>
+<ul>
+<li>Independent(独立して優先順位が付けられる)</li>
+<li>Negotiable(何を作るのかの案が調整可能である)</li>
+<li>Valuable(価値のある)</li>
+<li>Estimable(見積もり可能である)</li>
+<li>Small(チームで扱いやすいサイズ)</li>
+<li>Testable(テストできる)</li>
+</ul>
+</li>
+</ul>
+<p>のことでユーザーストーリーを評価するために重要である</p>
+<ul>
+<li>ギャレットの5段階とは<ul>
+<li>表面(Surface) 視覚デザイン</li>
+<li>骨格(Skelton) インフォメーション・デザイン、ナビゲーション・デザイン、インターフェイス・デザイン</li>
+<li>構造(Structure) インフォメーション・アーキテクチャ、インタラクション・デザイン</li>
+<li>要件(Scope) コンテンツ要求、機能要件</li>
+<li>戦略(Stratrgy) ユーザーニーズ、サイトの目的</li>
+</ul>
+</li>
+</ul>
+<p>のことでWebをデザインする際にUXを考え構築していく上で重要な考え方・概念のこと
+* この5段階の根底にある戦略部分から要件を洗い出し、アーキテクチャ、ナビゲーション、視覚デザインの様に設計を行う</p>
+<ul>
+<li>
+<p>仮説キャンバスとはジョブ理論という顧客はやり遂げたい何かがあり、そのためにプロダクトやサービスを雇用していると考える理論に基づいて目的やビジョン、ソリューションなどをキャンバスに書き出すこと</p>
+<ul>
+<li>仮説キャンバスと似たようなものにビジネスモデルキャンバスやリーンキャンバスなどがあるがこれらを参考にして自分のキャンバスを作ることが大切である</li>
+</ul>
+</li>
+<li>
+<p>MVP(MinimumViableProduct)とはユーザーにとって価値があり、かつ最小限の機能を持った製品のことである</p>
+<ul>
+<li>構築(Build)、計測(Measure)、学び(Learn)のフィードバックループを回しMVPをめざす</li>
+</ul>
+</li>
+<li>ユーザーストーリーマッピングでMVPを決めていく際に重要なのが広さと深さである</li>
+<li>
+<p>ユーザーインタビューとはユーザーが何を求めているのかや解決したい問題についてインタビューして情報を収集・分析することである</p>
+<ul>
+<li>準備フェーズ、実施フェーズ、検証フェーズで実行する</li>
+<li>インタビュー内容を予め考え、確証バイアスが絡まないようにすることが大切</li>
+<li>もちろんだがインタビューイの年齢層や性別、人数なども重要な要因である</li>
+</ul>
+</li>
+<li>
+<p>SL理論(SituationalLeadership)とはメンバーは教示的リーダーシップ、説得的リーダーシップ、参加的リーダーシップ、委任的リーダーシップの順で成長していくためリーダーもメンバーとともに成長していくということ</p>
+<ul>
+<li>リーダーもやり方を臨機応変に変えていく必要があるということ</li>
+</ul>
+</li>
+<li>
+<p>ハンガーフライトとは飛行機の格納庫でのパイロットたちの会話を模したもので自分自身が経験したことを話し、自分が経験していないことを聞くことによって経験値にしていくという考え方</p>
+<ul>
+<li>システム開発の現場で例えると、プロジェクトでの経験を話したり、勉強会を行ってアウトプットしていくことが重要であるということ</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.amazon.co.jp/dp/4798153346">カイゼン・ジャーニー たった1人からはじめて、「越境」するチームをつくるまで</a> </li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="フッター" >
+      
+        
+        <a href="../about_motivation/" class="md-footer__link md-footer__link--prev" aria-label="前: モチベのおはなし" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              モチベのおはなし
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../about_rundeck/" class="md-footer__link md-footer__link--next" aria-label="次: 必殺ジョブスケジューラ!!Rundeck" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              必殺ジョブスケジューラ!!Rundeck
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2022 hirotoyoshidome.
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/hirotoyoshidome" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/kichiru27_32" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../js/index.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2457 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技術系ブログです。">
+      
+      
+        <meta name="author" content="hirotoyoshidome">
+      
+      
+        <link rel="canonical" href="https://kichiru.com/blogs/2019/about_blockchain_detail/">
+      
+      <link rel="icon" href="../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>ブロックチェーンについて何もわからない人へ - Kichiru's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-0G7J0KZQSW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-0G7J0KZQSW",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G7J0KZQSW"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="Kichiru&#39;s Blog" class="md-header__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../../images/yoshi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kichiru's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ブロックチェーンについて何もわからない人へ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Kichiru&#39;s Blog" class="md-nav__button md-logo" aria-label="Kichiru's Blog" data-md-component="logo">
+      
+  <img src="../../../images/yoshi.png" alt="logo">
+
+    </a>
+    Kichiru's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        トップ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          がんばらないブログ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="がんばらないブログ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          がんばらないブログ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/my_opinion_startup/" class="md-nav__link">
+        スタートアップに転職して2年半たったのでちょっと書く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/how_to_use_web_push/" class="md-nav__link">
+        Webプッシュの使ってみる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/how_to_analyze_data/" class="md-nav__link">
+        僕がデータを見る時にやってること
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          2019
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2019" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2019
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zombie_process_python/" class="md-nav__link">
+        ゾンビDocker&Pythonで作ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memo_tls/" class="md-nav__link">
+        TLSの基礎知識
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_docker/" class="md-nav__link">
+        Docker 入門してみた備忘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_blockchain/" class="md-nav__link">
+        ブロックチェーンとは？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra_command/" class="md-nav__link">
+        インフラエンジニアやっていてよく使うコマンド集!!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../look_back_infra/" class="md-nav__link">
+        インフラやり始めて半年経ったため振り返る
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cache_hit_rate/" class="md-nav__link">
+        cacheのヒット率を測定するツールを作成しました
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_django/" class="md-nav__link">
+        Djangoのチュートリアルやったためまとめとく
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../think_about_web_development/" class="md-nav__link">
+        転職することになった今だから思うことの話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci_cd_aws/" class="md-nav__link">
+        AWSでCI・CD環境を構築
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry_front_css/" class="md-nav__link">
+        フロントもさわるようになって絶望的にCSSができなかったため勉強した話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu_from_windows10/" class="md-nav__link">
+        Windows10環境捨ててUbuntuにした結果...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws_basic_design/" class="md-nav__link">
+        AWSを使用した基本設計について考えてみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github_circleci_heroku_cd/" class="md-nav__link">
+        GitHub+CircleCI+Herokuでプッシュしたらデプロイの仕組みをつくる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ブロックチェーンについて何もわからない人へ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ブロックチェーンについて何もわからない人へ
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    はじめに (Introduction)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    アジェンダ (Agenda)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ブロックチェーンとは？
+  </a>
+  
+    <nav class="md-nav" aria-label="ブロックチェーンとは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    ブロックチェーン (Blockchain)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cryptocurrency" class="md-nav__link">
+    仮想通貨 (Cryptocurrency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    P2Pネットワークとは？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cryptographic-technology" class="md-nav__link">
+    暗号化技術 (Cryptographic Technology)とは？
+  </a>
+  
+    <nav class="md-nav" aria-label="暗号化技術 (Cryptographic Technology)とは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-function" class="md-nav__link">
+    ハッシュ関数 (Hash Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-key-cryptography" class="md-nav__link">
+    公開鍵暗号方式 (Public-key Cryptography)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    トランザクション (Transaction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miner" class="md-nav__link">
+    マイナー (Miner)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus-algorithm" class="md-nav__link">
+    コンセンサスアルゴリズム (Consensus Algorithm)とは？
+  </a>
+  
+    <nav class="md-nav" aria-label="コンセンサスアルゴリズム (Consensus Algorithm)とは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-work" class="md-nav__link">
+    Proof of Work
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-stake" class="md-nav__link">
+    Proof of Stake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-languages-libraries" class="md-nav__link">
+    開発言語とライブラリ等 (Development Languages &amp; Libraries)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    終わりに (Conclusions)
+  </a>
+  
+    <nav class="md-nav" aria-label="終わりに (Conclusions)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-contents" class="md-nav__link">
+    【オススメのコンテンツ】 (Recommended contents)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-opinions" class="md-nav__link">
+    【コメント】 (My opinions)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    参考 (References)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          2018
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2018" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2018
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/ssl_grade/" class="md-nav__link">
+        WebサイトのSSL化(HTTPS)の3つのグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/stop_double_send/" class="md-nav__link">
+        二重送信防止についての備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/handling_file_upload/" class="md-nav__link">
+        ファイルアップロード時の処理について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/memo_tcp_ip/" class="md-nav__link">
+        TCP/IPの備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/crlf_lf/" class="md-nav__link">
+        改行コードについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/spring_context_error/" class="md-nav__link">
+        SpringFrameworkのコンテキストエラーについて
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/sprint_first_content/" class="md-nav__link">
+        SpringFrameworkの初期表示について
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/java8_stream_api/" class="md-nav__link">
+        Java8 Stream API 使ってみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/spring_jsp_tag/" class="md-nav__link">
+        SpringFrameWorkでのJSP拡張タグの注意点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/review_pull_request/" class="md-nav__link">
+        プルリクの粒度とレビューに関する完全に独断と偏見のまとめ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/install_ruby_rails_windows/" class="md-nav__link">
+        WindowsでRuby, Railsをインストールする際に躓いた箇所
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/ruby_anemone/" class="md-nav__link">
+        Rubyでanemoneを使用してURLを取得するだけ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/entry_laravel/" class="md-nav__link">
+        Laravel導入 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/entry_shell/" class="md-nav__link">
+        基本的なシェルスクリプト 備忘録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/version_up_mysql5/" class="md-nav__link">
+        MySQL5.6→5.7バージョンアップ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/entry_docker_windows/" class="md-nav__link">
+        Docker for Windows を入門してみた
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/apache_ruby/" class="md-nav__link">
+        ApacheでRubyを起動するときの設定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/rails_server_sqlite3/" class="md-nav__link">
+        rails server でsqlite3のエラーが出た話
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/beginner_mysql_command/" class="md-nav__link">
+        MySQL コマンドチートシート 初心者向け
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/rails_minitest_mock/" class="md-nav__link">
+        Rails MiniTestでモックを使用する方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/about_motivation/" class="md-nav__link">
+        モチベのおはなし
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/summary_agile/" class="md-nav__link">
+        アジャイル開発の知識まとめる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/about_rundeck/" class="md-nav__link">
+        必殺ジョブスケジューラ!!Rundeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2018/vagrant_ssh_teraterm/" class="md-nav__link">
+        VirtualBox, Vagrantを使用してUbuntuを仮想マシンとして導入しTeraTermでSSH接続する
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_cdn/" class="md-nav__link">
+        CDN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_cookie/" class="md-nav__link">
+        Cookie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_session/" class="md-nav__link">
+        Session
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/data_structure/" class="md-nav__link">
+        データ構造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/about_db/" class="md-nav__link">
+        DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/oauth/" class="md-nav__link">
+        OAuth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/algorithm/" class="md-nav__link">
+        アルゴリズム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/nosql/" class="md-nav__link">
+        NoSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/database/" class="md-nav__link">
+        データベース
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/elasticsearch-opensearch/" class="md-nav__link">
+        ElasticsearchとOpenSearch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          インフラ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="インフラ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          インフラ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infrastructure/about_aws/" class="md-nav__link">
+        AWSについて
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          機械学習
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="機械学習" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          機械学習
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/about_ml/" class="md-nav__link">
+        機械学習
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/recommendation/" class="md-nav__link">
+        レコメンデーション
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/differential_equations/" class="md-nav__link">
+        微分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/integral/" class="md-nav__link">
+        積分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/trigonometric_functions/" class="md-nav__link">
+        三角関数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/linear_algebra/" class="md-nav__link">
+        線形代数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability_statistics/" class="md-nav__link">
+        確率・統計
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          ネットワーク
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ネットワーク" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          ネットワーク
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/about_osi/" class="md-nav__link">
+        OSI参照モデル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/tcp_ip/" class="md-nav__link">
+        TCP/IP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/proxy/" class="md-nav__link">
+        プロキシ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/protocol/" class="md-nav__link">
+        プロトコル
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../network/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          セキュリティ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="セキュリティ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          セキュリティ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/phishing/" class="md-nav__link">
+        フィッシング詐欺
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/multi_factor_authentication/" class="md-nav__link">
+        多要素認証
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/free_wifi/" class="md-nav__link">
+        Free Wi-fi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/secure_guide/" class="md-nav__link">
+        サービスを安全に利用するために
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/log/" class="md-nav__link">
+        ログ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          アーキテクチャ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="アーキテクチャ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          アーキテクチャ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/bit/" class="md-nav__link">
+        データの単位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/basic/" class="md-nav__link">
+        基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/memo/" class="md-nav__link">
+        Memo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/character_code/" class="md-nav__link">
+        文字コード
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          その他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="その他" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          その他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/satellite/" class="md-nav__link">
+        人工衛星データ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/iso/" class="md-nav__link">
+        ISO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    はじめに (Introduction)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    アジェンダ (Agenda)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ブロックチェーンとは？
+  </a>
+  
+    <nav class="md-nav" aria-label="ブロックチェーンとは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    ブロックチェーン (Blockchain)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cryptocurrency" class="md-nav__link">
+    仮想通貨 (Cryptocurrency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    P2Pネットワークとは？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cryptographic-technology" class="md-nav__link">
+    暗号化技術 (Cryptographic Technology)とは？
+  </a>
+  
+    <nav class="md-nav" aria-label="暗号化技術 (Cryptographic Technology)とは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-function" class="md-nav__link">
+    ハッシュ関数 (Hash Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-key-cryptography" class="md-nav__link">
+    公開鍵暗号方式 (Public-key Cryptography)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    トランザクション (Transaction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miner" class="md-nav__link">
+    マイナー (Miner)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus-algorithm" class="md-nav__link">
+    コンセンサスアルゴリズム (Consensus Algorithm)とは？
+  </a>
+  
+    <nav class="md-nav" aria-label="コンセンサスアルゴリズム (Consensus Algorithm)とは？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-work" class="md-nav__link">
+    Proof of Work
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-stake" class="md-nav__link">
+    Proof of Stake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-languages-libraries" class="md-nav__link">
+    開発言語とライブラリ等 (Development Languages &amp; Libraries)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    終わりに (Conclusions)
+  </a>
+  
+    <nav class="md-nav" aria-label="終わりに (Conclusions)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-contents" class="md-nav__link">
+    【オススメのコンテンツ】 (Recommended contents)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-opinions" class="md-nav__link">
+    【コメント】 (My opinions)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    参考 (References)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>ブロックチェーンについて何もわからない人へ</h1>
+
+<ul>
+<li>2019/12/01</li>
+</ul>
+<h2 id="introduction">はじめに (Introduction)<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ブロックチェーンについて、勉強していない。</li>
+<li>実は興味があるけど、難しそう</li>
+<li>これから勉強するつもり</li>
+<li>最近勉強し始めた</li>
+</ul>
+<p>といった方を対象に記事を書きたいと思います。</p>
+<h2 id="agenda">アジェンダ (Agenda)<a class="headerlink" href="#agenda" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#_1">ブロックチェーンとは？</a></li>
+<li><a href="#p2p">P2Pネットワークとは？</a></li>
+<li><a href="#cryptographic-technology">暗号化技術とは？</a></li>
+<li><a href="#consensus-algorithm">コンセンサスアルゴリズムとは？</a></li>
+<li><a href="#development-languages-libraries">開発言語とライブラリ等</a></li>
+<li><a href="#conclusions">終わりに</a></li>
+<li><a href="#references">参考</a></li>
+</ul>
+<h2 id="_1">ブロックチェーンとは？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>先ずはじめに、昨今話題となっているブロックチェーンと仮想通貨ですが、こちらは別物であると先に定義しておきます。</p>
+<h3 id="blockchain">ブロックチェーン (Blockchain)<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h3>
+<ul>
+<li>暗号化技術</li>
+<li>P2Pネットワーク</li>
+<li>コンセンサスアルゴリズム</li>
+<li>スマートコントラクト</li>
+</ul>
+<p>の大きく4つの柱からなる、新しい考え方のテクノロジーです。</p>
+<p>さらに詳細に申し上げますとDLT(Distributed Ledger Technology分散型台帳技術)を利用して取引履歴を改竄不可能にした技術となります。</p>
+<p><strong>ブロックチェーンはトランザクションをブロックに取り込み、且つ、ブロックは前のブロックの情報（ハッシュ値）を含むため、改竄不可能にする技術</strong></p>
+<p><strong>DLTはP2Pネットワークにより、取引履歴を皆で共有・保管することにより、ネットワークの安全性を担保する仕組み</strong></p>
+<p>となります。</p>
+<p>ブロックチェーンのブロックは前のブロックの情報（ハッシュ値）を含むについて参考図を下記に示します。
+<img alt="blockchain_diretion.png" src="../../../images/about_blockchain_detail1.png" /></p>
+<p><strong>ハッシュ値はそのブロックのハッシュ値であり、あるブロックを改竄しようとすると、それ以降のブロックのハッシュ値も変更することとなるため、理論的に改竄不可能となっています。</strong></p>
+<p>技術的なことは後述しますが、ブロックチェーンのネットワークにも、</p>
+<ul>
+<li>パブリックネット（本番環境）</li>
+<li>プライベートネット</li>
+<li>テストネット（ステージングの環境）</li>
+</ul>
+<p>が存在していることは頭の片隅に置いておいてください。</p>
+<p>先ずは、ブロックチェーン技術の発展の先駆けとなった、仮想通貨について解説します。</p>
+<h3 id="cryptocurrency">仮想通貨 (Cryptocurrency)<a class="headerlink" href="#cryptocurrency" title="Permanent link">&para;</a></h3>
+<p>Bitcoin(BTC)、Ethereum(ETH)、NEM、Ripple(XRP)のような現在の法定通貨に取って代わるような存在になることを掲げている通貨のことです。</p>
+<p>仮想通貨は多くの種類があり、上に挙げた4つは、その中でも代表的なものです。</p>
+<p><strong>Bitcoin</strong></p>
+<p>最初の仮想通貨であり、Satoshi Nakamotoと名乗る匿名の方が、メーリングリストに挙げた論文を元に構成されたものとなります。</p>
+<p>現時点でも、最も多く取引実績のある仮想通貨となります。
+通貨の単位はbitcoinまたはsatoshiです。</p>
+<p><strong>Ethereum</strong></p>
+<p>スマートコントラクトというEthereumブロックチェーンネットワーク上でプログラムを走らせることで、ブロックチェーン上でシステムを構築できることが最大の特徴と言えるでしょう。</p>
+<p>また、プログラムを実行する際に、保持しているコインを消費するという特徴もあります。
+通貨の単位はetherまたはweiです。</p>
+<p><strong>NEM</strong></p>
+<p>色々と話題になったNEMですが、NEMはNew Economic Movementの頭文字をとったものとなります。</p>
+<p>経済活動の構築を目的とする仮想通貨です。</p>
+<p><strong>Rippe(XRP)</strong></p>
+<p>Rippeは国際送金のアイディアにブロックチェーンのテクノロジを利用したものとなります。</p>
+<p>ブリッジ仮想通貨として用いられ、日本円⇒XRP⇒米ドルのような使われ方が一般的らしいです。</p>
+<p><strong>少し脱線しましたが、仮想通貨はそれぞれが掲げている思想や目的がことなり、それを保証するアルゴリズムも異なります。そのため、一概に仮想通貨といっても奥が深い世界なのです。</strong></p>
+<p>では話を戻しまして、ブロックチェーンとは何なのかについて書いていきます。</p>
+<p>そもそも、ブロックチェーンの技術は仮想通貨に代表されるように <strong>非中央集権のシステム</strong> を構築する際に利用される技術だと考えています。</p>
+<p>この記事を読んで頂いている方は、ほとんどの方が、エンジニア、若しくはITに関連する職業の方だと思いますので、システムに置き換えて解説します。</p>
+<p><strong>これまでのシステムは中央集権型</strong>です。</p>
+<p><strong>クライアント - サーバー方式</strong> と言って、我々が普段利用しているサービスは現状ほぼ、クライアントサーバー方式で稼働しています。
+各々のユーザーはブラウザを利用して、サービス提供者のサーバーへアクセスします。</p>
+<p>このときの <strong>全ての権限はサーバーを管理（サービスを管理）している組織に属します</strong></p>
+<p>これが、中央集権型と言われる所以です。</p>
+<p>仮想通貨が発展した理由は銀行が中央集権にあたるからだと言われています。</p>
+<p>例えば、日本の中央銀行である、日本銀行はお金の供給量を調整することで、景気の操作をしていることは中学校で勉強したと思います。</p>
+<p>これも、お金の管理の権限が銀行に集中しているため、できることです。
+（仮想通貨が一般的になり、景気の操作ができなくなることの良し悪しではなく一般論として）</p>
+<p>この中央集権の仕組みを変えることが可能になりそうなのが、ブロックチェーンのテクノロジーとなります。</p>
+<p>権利が集中していることで、得する人、被害を被る人が存在し、フェアじゃない世の中を変えることができるテクノロジーがブロックチェーンであると私は考えています。</p>
+<p>では、具体的にどのようにして非中央集権のシステムを構築しているのかについて、特に重要な考え方である、P2Pネットワークとコンセンサスアルゴリズムについて解説していきます。</p>
+<h2 id="p2p">P2Pネットワークとは？<a class="headerlink" href="#p2p" title="Permanent link">&para;</a></h2>
+<p>P2Pネットワークとはネットワークに参加しているノード(ブロックチェーンの場合は各ユーザー（PC）)とノードが繋がっている状態のネットワークのことを指します。</p>
+<p>対峙する用語としてはクライアント - サーバー方式となります。</p>
+<p>下記に図を示します。
+<img alt="p2p.png" src="../../../images/about_blockchain_detail2.png" /></p>
+<p>図のように
+<strong>クライアントサーバー型では、クライアントとサーバーが1対1での対話をする形式をとっているため、権限はサーバーに帰属</strong> します。</p>
+<p>一方で、<strong>P2Pネットワークの場合、各ノードは他のノード達と連携をするため、サーバーのように権限が一極集中するといった事象を回避することが可能</strong> となります。</p>
+<p>クライアントサーバー方式では、システムのルールや各ユーザーへの権限はすべてサーバー側で決定されることとなりますが、P2Pネットワークの場合、<strong>プロトコル(コンセンサスアルゴリズム(後述))</strong> で管理したり、 <strong>スマートコントラクト</strong> で管理することが可能となります。</p>
+<p>スマートコントラクトはプログラムですので、ルール作成の自由度も高まりますが、プロトコル配下での権限しかないため、クライアントサーバー型のようなすべて自由というわけではありません。</p>
+<p>また、P2Pネットワークを構築する上での基盤(Ethereum等)はすべてOSS（オープンソース・ソフトウェア）で構築されておりますので、もはや不正の働きようが無い状態となっています。</p>
+<p>P2Pネットワークの考え方自体は真新しいものではなく、以前から存在しているものでした。
+ですが、技術的にセキュリティの担保が取れず、実現ができていなかったようです。</p>
+<p>ここで重要となってくるのが、暗号化技術とコンセンサスアルゴリズムです。</p>
+<h2 id="cryptographic-technology">暗号化技術 (Cryptographic Technology)とは？<a class="headerlink" href="#cryptographic-technology" title="Permanent link">&para;</a></h2>
+<p>コンセンサスアルゴリズムを話す前に、ブロックチェーンの技術で利用されている代表的な暗号化技術について書こうと思います。</p>
+<p>利用されている代表的なものは</p>
+<ul>
+<li>SHA256</li>
+<li>Ripemd160</li>
+<li>公開鍵暗号方式</li>
+</ul>
+<p>となっています。SHA256とRipemd160はどちらもハッシュ関数（併せてHash160とも言われます）ですので、具体的な違い等は特段知らなくても問題はありませんが、ハッシュ関数については知っておくべきです。</p>
+<h3 id="hash-function">ハッシュ関数 (Hash Function)<a class="headerlink" href="#hash-function" title="Permanent link">&para;</a></h3>
+<p>ハッシュ関数とは不可逆的にランダムな文字列を生成する関数であり、生成される文字数は一定で、INPUTが同じであれば、OUTPUTはいつも同じものが生成される関数</p>
+<p>ハッシュ関数は身近な部分でも利用されていて、例えば、会員登録のあるWebサービスでは、パスワードをそのままDBに保存しません。</p>
+<p>ハッシュ化した値をDBに保存し、ログイン認証のときにハッシュ値を突合することで認証認可を実現しています。</p>
+<p>そのため、パスワードリセットのときとかは、運営からパスワードを教えていただくのではなく、リセット用のパスワードを発行して再設定を要求されますよね？？</p>
+<p>他にもGitHubのCommitIDにも利用されています。</p>
+<p>Gitを使ったことがあれば、わかると思いますが、<code>git log</code> コマンドを実行するとたくさんのコミット履歴を見ることができると思いますが、コミットもハッシュ値を利用して管理されていることがわかります。</p>
+<p>このように、ハッシュ関数は身近な部分でも利用されていて、理論上、不可逆であり、OUTPUTからINPUTを逆算することは不可能とされています。 </p>
+<p>公開鍵暗号方式も利用されていまして、とても重要な概念ですので、解説します。</p>
+<h3 id="public-key-cryptography">公開鍵暗号方式 (Public-key Cryptography)<a class="headerlink" href="#public-key-cryptography" title="Permanent link">&para;</a></h3>
+<p>暗号化する鍵と複合する鍵が別のものを利用する暗号方式。一般に公開鍵は公開しても良い鍵であり、秘密鍵は絶対に流出してはいけない。</p>
+<p>対峙する用語としては、共通鍵暗号方式があります。</p>
+<p>こちらは、暗号化と複合に共通の鍵を利用する暗号方式で、共通鍵の受け渡しがセキュリティ的に難しく現在は主流ではありません。</p>
+<p>公開鍵暗号方式は身近な例で言うと、SSH鍵に利用されています。</p>
+<p>サーバーへSSHするときに公開鍵の情報を <code>~/.ssh/authorized_keys</code> に記載することでSSHすることができるようになりますよね？</p>
+<p>これは公開鍵暗号方式による認証認可を利用してます。</p>
+<p>他にも最近多くなったメール等での電子署名にも公開鍵暗号方式が利用されています。</p>
+<p>※ここでは解説しませんが、「楕円曲線暗号」というアルゴリズムによって公開鍵暗号方式は実現されているので、興味のある方は参照ください。</p>
+<p><strong>では、ブロックチェーンの場合、どこで利用されているのでしょうか？</strong></p>
+<p>公開鍵暗号方式は、主にWalletと送金の部分で利用されています。</p>
+<p>Bitcoinの例で解説しますと、実際の現在の所持金はWallet（仮想通貨を管理する財布だと思ってください）には保管されていません。</p>
+<p><strong>Walletには秘密鍵が保管</strong> してあり、現在の所持金を確認するときは未使用のトランザクションのOUTPUTを集める形となります。</p>
+<p>この未使用のトランザクションのOUTPUTのことを <strong>UTXO(Unspent Transaction Output)</strong> といいます。</p>
+<p>では、OUTPUTとはなんでしょうか？</p>
+<p>これを説明する上では、トランザクションとマイナーを説明することとなります。</p>
+<h3 id="transaction">トランザクション (Transaction)<a class="headerlink" href="#transaction" title="Permanent link">&para;</a></h3>
+<p>トランザクションとは仮想通貨の送金やマイナー(Miner)が発掘した新たなコインの所有権の移動の際に発生する取引の単位です</p>
+<p>Webエンジニアであれば、DBでのトランザクションについてご存知かと思いますが、考え方は同じとなります。</p>
+<p><strong>取引の単位としてトランザクションを利用</strong> することで、データの不整合を防止することになっています。</p>
+<h3 id="miner">マイナー (Miner)<a class="headerlink" href="#miner" title="Permanent link">&para;</a></h3>
+<p>マイナーとは、コンセンサスアルゴリズム(後述)に定められた値を膨大な計算量によって算出し、 <strong>トランザクションをブロックに取り込む</strong> ことで、その手数料として、コインを獲得するユーザーのことを指します。</p>
+<p>つまり、 <strong>コンピュータの計算リソースを提供することでコインを獲得する</strong> ということです。</p>
+<p>Bitcoinのコンセンサスアルゴリズムでは、ハッシュ関数を2回利用した値が設定された値より、小さくなる値を算出のような課題が設定され、総当り的な計算量が必要になるように設定されています。</p>
+<p>ハッシュ関数の不可逆性を利用して、総当り的な計算になるような設計となっている部分がミソとなります。</p>
+<p>このようにハッシュ関数はブロックチェーンテクノロジーで利用されています。</p>
+<p>トランザクションのOUTPUTの話にもどすと、 <strong>以前のトランザクションのOUTPUTを次回のトランザクションのINPUT</strong> に利用することができます。</p>
+<p>送金はともかく、決済のタイミングでお釣りが生じるケースは多々あると思いますが、お釣りの場合も、INPUTには以前のOUTPUTが利用され、お釣りはOUTPUTとしてトランザクションが行われます。</p>
+<p>そのため、口座からお金が引かれたけど、取引相手の口座へプラスされる前にエラーが。。。</p>
+<p>みたいな現象は理論上起きないように設計されています。</p>
+<p>下記参考図です。
+<img alt="transaction.png" src="../../../images/about_blockchain_detail3.png" /></p>
+<p>図にも記載しているとおり、すべてINPUTとOUTPUTで管理されるようになるため、シンプルであり、片方が更新されて片方が更新されていないといった問題が解消されます。</p>
+<p>次節では先程から頻出しているコンセンサスアルゴリズムについて解説します。</p>
+<h2 id="consensus-algorithm">コンセンサスアルゴリズム (Consensus Algorithm)とは？<a class="headerlink" href="#consensus-algorithm" title="Permanent link">&para;</a></h2>
+<p>最初に挙げた、ブロックチェーンの4つの柱の中でもっともイメージがしにくい、または、聞いたことの無い用語はコンセンサスアルゴリズムだと思います。</p>
+<p>Wikipediaによりますと、
+<img alt="Screenshot from 2019-12-01 09-48-29.png" src="../../../images/about_blockchain_detail4.png" /></p>
+<pre><code>コンセンサスアルゴリズムは分散プロセス、分散システム、分散システムの現在の状態の単一データ値により、合意を形成するために使用されるコンピューターサイエンス分野におけるコンセンサス問題を解決するために提案されたプロトコルの1つである。
+コンセンサスアルゴリズムは主に、同じ情報を含む複数の分散ノードを含むネットワークで信頼を形成するために利用される。
+</code></pre>
+<p>Wikipediaは難しく書いてありますが、噛み砕くと</p>
+<p><strong>Consensus = 合意</strong></p>
+<p>なので、合意を形成するためのルール(プロトコル)を定義したものとなります。</p>
+<p>Bitcoinの場合は、PoW(Proof of Work)、Ethereumの場合はPoS(Proof of Stake)がこれにあたります。</p>
+<p>では、これら2つについて解説します。</p>
+<h3 id="proof-of-work">Proof of Work<a class="headerlink" href="#proof-of-work" title="Permanent link">&para;</a></h3>
+<p>Proof of Work(以下PoW)は直訳すると「 <strong>仕事の証明</strong> 」です。</p>
+<p>Bitcoinの場合、マイナーにより、トランザクションをブロックに取り込むという説明を先述しましたが、これが、PoWにあたります。</p>
+<p>Bitcoinの場合、ハッシュを利用した、予測不能な値を総当り的に算出することがマイナーへの課題として提示されますが、 <strong>計算量 = Work</strong> として証明となります。</p>
+<p><strong>算出された値(Nonceといいます)が適正な値か否かについて、隣接するノード（PC）に伝播し、検算をしてもらいます。正しければ、そのまた隣接するノードへ伝播を繰り返すことで、証明をする仕組み</strong> となっています。</p>
+<p>正しいことが認められたときに、トランザクションはブロックへ取り込まれ、初めて取引が認められたことになります。</p>
+<p>この過程を経ることで、合意を形成するということを担保しています。</p>
+<h3 id="proof-of-stake">Proof of Stake<a class="headerlink" href="#proof-of-stake" title="Permanent link">&para;</a></h3>
+<p>Proof of Stake(以下PoS)は直訳すると「 <strong>利害の証明</strong> 」です。</p>
+<p>Proof of Wordではマイナーによるマインニングにより、仕事量を証明することで合意を形成すると説明しましたが、こちらには問題があり、計算リソースを大量に投入することで、際限の無いマイニング競争に陥ってしまします。</p>
+<p>例えば、現状、中国がマイニングではかなり多くの割合を占めております。（電気料金が安く、PCをフル稼働するため、冷涼な気候である中国の山奥が有利なようです。）</p>
+<p>そのため、 <strong>EtherumではPoSが採用</strong> されています。</p>
+<p>PoSではCoinAgeというステータスをもっており、 <strong>コインの量 * コインを保持している期間</strong> で定められます。</p>
+<p>CoinAgeの値が大きいほど、マイニングに成功しやすくなるように設定されており、1度マイニングに成功するとCoinAgeは減るように設計されていますので、 <strong>同じマイナーが勝ち続けることを緩和する仕組み</strong> が提供されています。</p>
+<h2 id="development-languages-libraries">開発言語とライブラリ等 (Development Languages &amp; Libraries)<a class="headerlink" href="#development-languages-libraries" title="Permanent link">&para;</a></h2>
+<p>最後の節では、ブロックチェーン技術に利用されている言語について書きたいと思います。</p>
+<ul>
+<li>BitcoinではC++が採用されており、OSSでソースも公開されています。<ul>
+<li><a href="https://github.com/bitcoin">https://github.com/bitcoin</a></li>
+</ul>
+</li>
+<li>Etherumも同様にC++が採用されていますが、クライアントツールで有名なgo-ethereum(geth)はGolangで開発されています。<ul>
+<li><a href="https://github.com/ethereum">https://github.com/ethereum</a></li>
+</ul>
+</li>
+<li>Ethereumでスマートコントラクトの開発に利用されている言語としてSolidityという言語があります。<ul>
+<li><a href="https://github.com/ethereum/solidity">https://github.com/ethereum/solidity</a></li>
+</ul>
+</li>
+<li>Ethereum上でJavaScriptを利用してノードとローカルの通信を提供するWeb3.jsもメジャーです。<ul>
+<li><a href="https://github.com/ethereum/web3.js">https://github.com/ethereum/web3.js</a></li>
+</ul>
+</li>
+<li>HyperledgerFabricというOSSの取り組み（プライベート型/コンソーシアム型ブロックチェーン）もあり、最近はこれを利用してDapps開発(Decentralized Application)が盛んに行われているように感じます。<ul>
+<li><a href="https://github.com/hyperledger/fabric">https://github.com/hyperledger/fabric</a></li>
+</ul>
+</li>
+</ul>
+<p>他にもたくさんBlockchain関連のライブラリが提供されていますが、代表的なものを挙げてみました。</p>
+<p>個人的な意見としては、ブロックチェーンの本体はC++, Rust（FaceBook社のLibraはRustで書かれています）で書かれているものが多い印象です。</p>
+<p><a href="https://github.com/libra/libra">https://github.com/libra/libra</a></p>
+<p>Dapps側では、Golang, JavaScript(Node.js), Javaが多い印象をうけます。</p>
+<p>ちなみに <strong>HyperledgerFabricでは、現在、Golang, Node.js, Javaがサポート</strong> されています。</p>
+<p><a href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode.html">https://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode.html</a></p>
+<p><strong>ブロックチェーンを勉強する上でJavaScriptを勉強するのは良い選択肢だと思っています。(SolidityもJavaScriptライクな言語です。(静的型付け言語))</strong></p>
+<h2 id="conclusions">終わりに (Conclusions)<a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<h3 id="recommended-contents">【オススメのコンテンツ】 (Recommended contents)<a class="headerlink" href="#recommended-contents" title="Permanent link">&para;</a></h3>
+<p><strong>IBM Foot Trust</strong></p>
+<p>こちらはブロックチェーンのトレーサビリティ（追跡性）を活かした、IBM社製のサービスとなります。</p>
+<p>Walmartという世界的にも最大級のスーパーマーケットとのビジネスに利用されているようです。</p>
+<p>YouTubeでも動画が挙がっていますので、見てみると面白いです。</p>
+<ul>
+<li><a href="https://www.ibm.com/blockchain/solutions/food-trust">https://www.ibm.com/blockchain/solutions/food-trust</a></li>
+<li><a href="https://www.youtube.com/watch?v=SV0KXBxSoio">https://www.youtube.com/watch?v=SV0KXBxSoio</a></li>
+</ul>
+<p><strong>Bettina Warburg</strong></p>
+<p>Bettina Warburgという方が、Tedでプレゼンテーションしたときの動画になります。</p>
+<p>こちらも非常に面白い内容となってます。</p>
+<p><a href="https://www.youtube.com/watch?v=RplnSVTzvnU">https://www.youtube.com/watch?v=RplnSVTzvnU</a></p>
+<p><strong>Satoshi Nakamoto</strong></p>
+<p>忘れてはいけないのがこちらの論文です。</p>
+<p><a href="https://bitcoin.org/bitcoin.pdf">https://bitcoin.org/bitcoin.pdf</a></p>
+<p><strong>EthereumのWiki(WhitePaper)</strong></p>
+<p>英語ですが、勉強になると思います。</p>
+<p><a href="https://github.com/ethereum/wiki/wiki/White-Paper">https://github.com/ethereum/wiki/wiki/White-Paper</a></p>
+<h3 id="my-opinions">【コメント】 (My opinions)<a class="headerlink" href="#my-opinions" title="Permanent link">&para;</a></h3>
+<p>最後になりますが、現状、ブロックチェーンに関する情報は日本語ではかなり少ないと感じます。</p>
+<p>そのため、英語でドキュメントを読まなければ行けなかったり、英語での動画から情報を得たりする必要性があります。</p>
+<p>ですが、ブロックチェーンのテクノロジーにはまだたくさんの可能性があるのではと私は考えています。</p>
+<p>少しでも興味を持っていただければ、発展に繋がっていくのではないかなと思っております。</p>
+<h2 id="references">参考 (References)<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>URLを貼り付けたものすべて</li>
+<li>堅牢なスマートコントラクト開発のためのブロックチェーン[技術]入門（技術評論社）</li>
+<li>ブロックチェーンアプリケーション開発の教科書 (マイナビ)</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="フッター" >
+      
+        
+        <a href="../github_circleci_heroku_cd/" class="md-footer__link md-footer__link--prev" aria-label="前: GitHub+CircleCI+Herokuでプッシュしたらデプロイの仕組みをつくる" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              GitHub+CircleCI+Herokuでプッシュしたらデプロイの仕組みをつくる
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../2018/ssl_grade/" class="md-footer__link md-footer__link--next" aria-label="次: WebサイトのSSL化(HTTPS)の3つのグレード" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              WebサイトのSSL化(HTTPS)の3つのグレード
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2022 hirotoyoshidome.
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/hirotoyoshidome" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/kichiru27_32" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../js/index.js"></script>
+      
+    
+  </body>
+</html>
